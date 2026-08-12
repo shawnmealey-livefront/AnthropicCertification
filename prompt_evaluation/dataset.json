@@ -1,11 +1,14 @@
 [
   {
-    "task": "Write a Python function that extracts the AWS region from an S3 bucket URL. The function should take a URL like 's3://my-bucket.s3.us-west-2.amazonaws.com/key' and return 'us-west-2'."
+    "task": "Extract AWS account ID from an ARN string",
+    "format": "regex"
   },
   {
-    "task": "Create a JSON object that represents an AWS IAM policy allowing a principal to perform s3:GetObject and s3:PutObject actions on a specific S3 bucket named 'my-data-bucket'."
+    "task": "Create a CloudFormation template JSON for an S3 bucket with versioning enabled",
+    "format": "json"
   },
   {
-    "task": "Write a regular expression that matches valid AWS IAM role ARNs in the format 'arn:aws:iam::123456789012:role/RoleName'. The regex should validate the account ID (12 digits) and ensure the role name contains only alphanumeric characters, hyphens, and forward slashes."
+    "task": "Write a Python function to validate an AWS IAM username format",
+    "format": "python"
   }
 ]
