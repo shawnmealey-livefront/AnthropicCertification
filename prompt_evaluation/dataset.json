@@ -1,14 +1,17 @@
 [
   {
-    "task": "Extract AWS account ID from an ARN string",
-    "format": "regex"
+    "task": "Parse an AWS S3 bucket name from an S3 URI like s3://my-bucket-name/path/to/file.txt",
+    "format": "regex",
+    "solution_criteria": "The regex should extract 'my-bucket-name' from various S3 URI formats and handle bucket names with hyphens and numbers"
   },
   {
-    "task": "Create a CloudFormation template JSON for an S3 bucket with versioning enabled",
-    "format": "json"
+    "task": "Write a Python function that converts an AWS CloudFormation template dictionary to a formatted JSON string with proper indentation",
+    "format": "python",
+    "solution_criteria": "The function should accept a Python dictionary and return a JSON string with 2-space indentation, handling nested resources and properties correctly"
   },
   {
-    "task": "Write a Python function to validate an AWS IAM username format",
-    "format": "python"
+    "task": "Create a JSON structure for an AWS IAM policy that allows s3:GetObject and s3:PutObject actions on a specific bucket ARN",
+    "format": "json",
+    "solution_criteria": "The JSON should be a valid IAM policy with proper Version, Statement, Effect, Action, and Resource fields following AWS policy syntax"
   }
 ]
