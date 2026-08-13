@@ -1,0 +1,1232 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prompt Evaluation Report</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                margin: 0;
+                padding: 20px;
+                color: #333;
+            }
+            .header {
+                background-color: #f0f0f0;
+                padding: 20px;
+                border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .summary-stats {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .stat-box {
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                flex-basis: 30%;
+                min-width: 200px;
+            }
+            .stat-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin-top: 5px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+            th {
+                background-color: #4a4a4a;
+                color: white;
+                text-align: left;
+                padding: 12px;
+            }
+            td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                vertical-align: top;
+            }
+            tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            .output-cell {
+                white-space: pre-wrap;
+            }
+            .score {
+                font-weight: bold;
+                padding: 5px 10px;
+                border-radius: 3px;
+                display: inline-block;
+            }
+            .score-high {
+                background-color: #c8e6c9;
+                color: #2e7d32;
+            }
+            .score-medium {
+                background-color: #fff9c4;
+                color: #f57f17;
+            }
+            .score-low {
+                background-color: #ffcdd2;
+                color: #c62828;
+            }
+            .output {
+                overflow: auto;
+                white-space: pre-wrap;
+            }
+
+            .output pre {
+                background-color: #f5f5f5;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                padding: 10px;
+                margin: 0;
+                font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+                font-size: 14px;
+                line-height: 1.4;
+                color: #333;
+                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+                overflow-x: auto;
+                white-space: pre-wrap; 
+                word-wrap: break-word; 
+            }
+
+            td {
+                width: 20%;
+            }
+            .score-col {
+                width: 80px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Prompt Evaluation Report</h1>
+            <div class="summary-stats">
+                <div class="stat-box">
+                    <div>Total Test Cases</div>
+                    <div class="stat-value">10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Average Score</div>
+                    <div class="stat-value">5.5 / 10</div>
+                </div>
+                <div class="stat-box">
+                    <div>Pass Rate (≥7)</div>
+                    <div class="stat-value">30.0%</div>
+                </div>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>Prompt Inputs</th>
+                    <th>Solution Criteria</th>
+                    <th>Output</th>
+                    <th>Score</th>
+                    <th>Reasoning</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+            <tr>
+                <td>Testing with a high-endurance athlete (marathon runner) requiring 4000+ calories with emphasis on carbohydrate loading</td>
+                <td class="prompt-inputs"><strong>height:</strong> 180<br><strong>weight:</strong> 72<br><strong>goal:</strong> Marathon training - high-endurance athlete requiring 4000+ calories with carbohydrate loading<br><strong>restrictions:</strong> None</td>
+                <td class="criteria">• Meal plan totals 4000+ calories<br>• Carbohydrates comprise at least 60% of total calories<br>• Plan is presented as a single day with distinct meals<br>• Plan is compact and concise (minimal elaboration)</td>
+                <td class="output"><pre># One-Day Meal Plan for Marathon Training Athlete
+
+## 1. DAILY CALORIE CALCULATION
+
+**Basal Metabolic Rate (BMR):**
+- Using Mifflin-St Jeor: ~1,750 calories
+- Activity Factor (high-endurance marathon training): 2.3
+- **Total Daily Energy Expenditure: ~4,025 calories**
+
+For optimal carbohydrate loading and recovery: **4,200-4,500 calories**
+
+---
+
+## 2. MACRONUTRIENT BREAKDOWN
+
+| Macronutrient | Amount | Percentage |
+|---|---|---|
+| **Protein** | 140g | 13% |
+| **Carbohydrates** | 630g | 60% |
+| **Fat** | 140g | 30% |
+
+*Note: High carbohydrate ratio supports marathon endurance training*
+
+---
+
+## 3. MEAL TIMING PLAN
+
+```
+6:00 AM  → Pre-run breakfast (before long run)
+9:30 AM  → Post-run recovery snack
+12:30 PM → Lunch
+3:30 PM  → Mid-afternoon energy snack
+6:30 PM  → Dinner
+8:30 PM  → Evening carb-loading snack
+```
+
+---
+
+## 4 & 5. COMPLETE MEAL PLAN WITH PORTIONS
+
+### **6:00 AM | Pre-Run Breakfast** (550 cal | 18g protein | 105g carbs | 8g fat)
+- Oatmeal (80g dry)
+- Banana (180g)
+- Honey (2 tbsp)
+- Whole milk (200ml)
+- Pinch of salt
+
+*Why: Fast-digesting carbs + some protein for sustained energy during long run*
+
+---
+
+### **9:30 AM | Post-Run Recovery Snack** (650 cal | 32g protein | 95g carbs | 12g fat)
+- **Recovery smoothie:**
+  - Greek yogurt (250g, plain)
+  - Whole milk (300ml)
+  - Berries (150g: blueberries & strawberries)
+  - Honey (1.5 tbsp)
+  - Whole grain toast (50g)
+  - Almond butter (15g)
+
+*Why: Rapid protein + carbs window for muscle repair; 3:1 carb-to-protein ratio*
+
+---
+
+### **12:30 PM | Lunch** (900 cal | 38g protein | 120g carbs | 22g fat)
+- **Grilled chicken & sweet potato bowl:**
+  - Chicken breast (180g grilled)
+  - Sweet potato (200g roasted)
+  - Brown rice (100g cooked)
+  - Olive oil (1.5 tbsp)
+  - Mixed vegetables (broccoli & carrots, 150g)
+  - Side: White bread roll (60g)
+  - Orange juice (250ml)
+
+*Why: Complete amino acids + complex carbs for afternoon training prep*
+
+---
+
+### **3:30 PM | Mid-Afternoon Energy Snack** (500 cal | 16g protein | 95g carbs | 12g fat)
+- **Energy fuel option:**
+  - Bagel (90g)
+  - Peanut butter (25g)
+  - Banana (150g)
+  - Sports drink or diluted juice (400ml)
+
+*Why: Quick carbs + sustained energy 3 hours before dinner*
+
+---
+
+### **6:30 PM | Dinner** (900 cal | 42g protein | 125g carbs | 28g fat)
+- **Lean beef & pasta carb-load:**
+  - Lean ground beef (200g, cooked)
+  - Pasta (120g dry weight cooked)
+  - Tomato-based sauce (150g)
+  - Olive oil (2 tbsp)
+  - Side salad with olive oil dressing (200g mixed greens)
+  - Garlic bread (50g)
+  - Red wine (optional, 150ml)
+
+*Why: Iron-rich protein + high carbs for overnight recovery*
+
+---
+
+### **8:</pre></td>
+                <td class="score-col"><span class="score score-low">4</span></td>
+                <td class="reasoning">The solution demonstrates strong understanding of the task and provides a well-organized framework meeting the mandatory requirements. However, the critical flaw is that it's incomplete—the final meal (8:30 PM carb-loading snack) is cut off after the header, making it impossible to verify the actual daily caloric total or confirm all macronutrient targets are met. While the first 5 meals total approximately 3,500 calories with proper macro ratios, the missing final meal prevents confirmation that the 4,000+ calorie target is achieved. The solution also exceeds the 'compact and concise' criterion with explanatory text, though this is a secondary issue compared to the incompleteness.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a strength-based athlete (weightlifter) requiring 3500+ calories with high protein intake and specific meal timing around workouts</td>
+                <td class="prompt-inputs"><strong>height:</strong> 180<br><strong>weight:</strong> 95<br><strong>goal:</strong> Strength training and muscle gain for competitive weightlifting<br><strong>restrictions:</strong> None</td>
+                <td class="criteria">• Meal plan totals 3500+ calories across all meals<br>• Protein intake is at least 190g (2g per kg body weight)<br>• Includes pre-workout and post-workout meals with appropriate timing<br>• Plan is presented as a compact, single-day schedule with 4-5 meals</td>
+                <td class="output"><pre># One-Day Meal Plan for Competitive Weightlifter
+
+## 1. DAILY CALORIE CALCULATION
+
+**Basal Metabolic Rate (BMR):**
+- Using Mifflin-St Jeor: ~1,850 calories
+- Activity Factor (intense strength training): 1.75
+- **Total Daily Energy Expenditure: ~3,240 calories**
+
+For muscle gain with strength training: **3,600-3,800 calories**
+
+---
+
+## 2. MACRONUTRIENT BREAKDOWN
+
+| Macronutrient | Amount | Percentage |
+|---|---|---|
+| **Protein** | 200g | 22% |
+| **Carbohydrates** | 450g | 50% |
+| **Fat** | 115g | 28% |
+
+*Rationale: High protein for muscle synthesis, adequate carbs for strength performance, sufficient fat for hormone production*
+
+---
+
+## 3. MEAL TIMING PLAN
+
+```
+7:00 AM   → Pre-workout breakfast
+9:30 AM   → Intra/Post-workout nutrition
+12:30 PM  → Post-training meal
+3:30 PM   → Afternoon snack
+6:30 PM   → Dinner
+8:30 PM   → Evening recovery snack
+```
+
+---
+
+## 4 & 5. COMPLETE MEAL PLAN WITH PORTIONS
+
+### **7:00 AM | Pre-Workout Breakfast** (650 cal | 25g protein | 95g carbs | 14g fat)
+- Oatmeal (80g dry) cooked with water
+- Whole egg (1) + egg whites (2)
+- Banana (150g)
+- Almond butter (15g / 1 tbsp)
+- Honey (10g / 1 tbsp)
+
+*Why: Sustained energy from oats + quick carbs from banana before heavy lifting*
+
+---
+
+### **9:30 AM | Intra/Post-Workout Nutrition** (500 cal | 35g protein | 65g carbs | 8g fat)
+- Whey protein shake (40g powder)
+- White rice (80g cooked)
+- Dextrose/maltodextrin powder (30g)
+- Whole milk (200ml)
+- Banana (120g)
+
+*Why: Fast-absorbing carbs + protein for glycogen replenishment and muscle recovery*
+
+---
+
+### **12:30 PM | Post-Training Meal** (850 cal | 55g protein | 95g carbs | 22g fat)
+- **Grilled chicken breast** (200g)
+- Sweet potato (250g baked)
+- Olive oil (1.5 tbsp)
+- Broccoli (150g steamed)
+- White rice (100g cooked)
+- Salt & black pepper
+
+*Why: Lean protein + complex carbs for muscle repair and glycogen restoration*
+
+---
+
+### **3:30 PM | Afternoon Snack** (450 cal | 30g protein | 55g carbs | 10g fat)
+- Greek yogurt (250g, full-fat)
+- Granola (50g)
+- Berries (100g mixed)
+- Honey (15g / 1 tbsp)
+
+*Why: Casein + whey protein blend for sustained amino acid delivery*
+
+---
+
+### **6:30 PM | Dinner** (900 cal | 48g protein | 105g carbs | 28g fat)
+- **Lean ground beef** (250g, 85/15)
+- White pasta (120g dry weight)
+- Tomato sauce (120g)
+- Extra virgin olive oil (2 tbsp for cooking)
+- Whole wheat roll (50g)
+- Side salad with mixed greens (150g)
+- Parmesan cheese (20g)
+
+*Why: High protein + iron from beef + creatine precursors for strength gains*
+
+---
+
+### **8:30 PM | Evening Recovery Snack** (250 cal | 27g protein | 35g carbs | 8g fat)
+- Cottage cheese (200g, 2%)
+- White toast (40g)
+- Jam (15g /</pre></td>
+                <td class="score-col"><span class="score score-medium">7</span></td>
+                <td class="reasoning">The solution meets all three mandatory requirements despite being incomplete: (1) Daily caloric total is stated as 3,600-3,800 calories with individual meal breakdowns totaling approximately 3,550 calories; (2) Protein intake is 200g (2.1g per kg), exceeding the 190g minimum; (3) Meals include exact foods, portions, and timing with clear pre-workout (7:00 AM) and post-workout (9:30 AM) nutrition. However, the solution violates the secondary criterion of being 'compact' with 6 meals instead of 4-5, and the truncated final meal is a presentation flaw. The incomplete ending is a significant issue but does not prevent verification of the mandatory requirements from the visible content.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a sport that has strict weight class requirements (boxer) needing calorie control while maintaining muscle</td>
+                <td class="prompt-inputs"><strong>height:</strong> 178 cm<br><strong>weight:</strong> 71 kg<br><strong>goal:</strong> Maintain muscle mass while cutting 2 kg to make middleweight boxing class (72 kg limit) before competition in 5 days<br><strong>restrictions:</strong> No dairy due to lactose intolerance</td>
+                <td class="criteria">• Meal plan contains exactly 3 meals spanning 1 day<br>• Total daily calories support gradual weight loss (approximately 500 calorie deficit) while preserving muscle<br>• All meals are dairy-free and practical for athlete preparation<br>• Protein intake is sufficient to maintain muscle mass during caloric deficit</td>
+                <td class="output"><pre># One-Day Meal Plan for Boxer - Cutting Phase
+
+## 1. DAILY CALORIE CALCULATION
+
+**Basal Metabolic Rate (BMR):**
+- Using Mifflin-St Jeor: ~1,720 calories
+- Activity Factor (intense boxing training): 1.75
+- **Total Daily Energy Expenditure: ~3,010 calories**
+
+**Cutting Strategy:**
+- Target: 2,500 calories/day (510 cal deficit)
+- Weight loss: ~0.5 kg/week × 5 days = ~0.36 kg
+- Combined with dehydration protocol: Safe to reach 72 kg by competition
+- **Daily Target: 2,500 calories**
+
+---
+
+## 2. MACRONUTRIENT BREAKDOWN
+
+| Macronutrient | Amount | Percentage |
+|---|---|---|
+| **Protein** | 170g | 27% |
+| **Carbohydrates** | 287g | 46% |
+| **Fat** | 69g | 25% |
+
+*Note: Higher protein (1.5g per lb) to preserve muscle during caloric deficit*
+
+---
+
+## 3. MEAL TIMING PLAN
+
+```
+6:30 AM  → Pre-morning training snack
+9:00 AM  → Post-training breakfast
+12:30 PM → Lunch
+3:30 PM  → Pre-afternoon session snack
+6:30 PM  → Dinner
+8:30 PM  → Light evening snack (optional, <150 cal)
+```
+
+---
+
+## 4 & 5. COMPLETE MEAL PLAN WITH PORTIONS
+
+### **6:30 AM | Pre-Morning Training Snack** (280 cal | 12g protein | 52g carbs | 2g fat)
+- Banana (180g)
+- White toast (35g)
+- Honey (1 tbsp / 15g)
+
+*Why: Fast carbs for early morning energy without stomach heaviness*
+
+---
+
+### **9:00 AM | Post-Training Breakfast** (520 cal | 42g protein | 68g carbs | 8g fat)
+- **Egg white scramble**
+- Egg whites (6 large / 180g)
+- Spinach (80g)
+- Tomatoes (100g)
+- Olive oil (1 tsp / 5g)
+- White rice (80g cooked)
+- Orange juice (150ml)
+
+*Why: Lean protein source without dairy; quick muscle recovery*
+
+---
+
+### **12:30 PM | Lunch** (680 cal | 48g protein | 82g carbs | 12g fat)
+- **Grilled chicken with sweet potato**
+- Skinless chicken breast (220g grilled)
+- Sweet potato (250g baked)
+- Steamed broccoli (150g)
+- Olive oil drizzle (1 tbsp / 15g)
+- White rice cakes (30g / 2 cakes)
+- Coconut water (200ml)
+
+*Why: Lean protein + carbs for sustained energy; aids glycogen replenishment*
+
+---
+
+### **3:30 PM | Pre-Afternoon Training Snack** (320 cal | 28g protein | 38g carbs | 6g fat)
+- **Tuna rice cakes**
+- Canned tuna in water (140g drained)
+- Rice cakes (50g / 3 cakes)
+- Light mayonnaise (1 tbsp / 15g)
+- Banana (120g)
+
+*Why: Protein + carbs 90 minutes before training; easily digestible*
+
+---
+
+### **6:30 PM | Dinner** (620 cal | 52g protein | 68g carbs | 18g fat)
+- **Baked white fish with pasta**
+- Lean white fish fillet (250g - cod, tilapia, or halibut)
+- Pasta (100g dry weight / ~210g cooked)
+- Tomato-based sauce (100g, no cream)
+- Olive oil (1.5 tbsp / 20g)
+- Mixed greens salad (120g)
+-</pre></td>
+                <td class="score-col"><span class="score score-low">4</span></td>
+                <td class="reasoning">The solution violates a secondary criterion by providing 6 meals/snacks instead of exactly 3 meals. While it includes all mandatory requirements (caloric total, macronutrient breakdown, foods with portions and timing), the structure fundamentally contradicts the stated criteria of '3 meals spanning 1 day.' The caloric accounting is also unclear due to the incomplete dinner section and optional evening snack. The solution is technically comprehensive and nutritionally sound, but fails to meet the specific meal structure requirement.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a vegan/plant-based athlete requiring complete protein sources and iron-rich alternatives throughout the day</td>
+                <td class="prompt-inputs"><strong>height:</strong> 178 cm<br><strong>weight:</strong> 72 kg<br><strong>goal:</strong> muscle building and endurance training<br><strong>restrictions:</strong> vegan, no animal products</td>
+                <td class="criteria">• Meal plan covers all three meals for one day with complete protein sources (legumes, tofu, tempeh, nuts, seeds)<br>• Includes iron-rich plant-based foods (lentils, spinach, fortified grains, pumpkin seeds) to support athletic performance<br>• Calorie and macronutrient distribution appropriate for an athlete with muscle-building goals<br>• Plan is compact and concise, fitting within a single day format</td>
+                <td class="output"><pre># One-Day Meal Plan for Vegan Athlete
+
+## 1. DAILY CALORIE CALCULATION
+
+**Basal Metabolic Rate (BMR):**
+- Using Mifflin-St Jeor: ~1,680 calories
+- Activity Factor (muscle building + endurance training): 1.8
+- **Total Daily Energy Expenditure: ~3,024 calories**
+
+For optimal muscle building and recovery: **3,200-3,400 calories**
+
+---
+
+## 2. MACRONUTRIENT BREAKDOWN
+
+| Macronutrient | Amount | Percentage |
+|---|---|---|
+| **Protein** | 160g | 19% |
+| **Carbohydrates** | 450g | 53% |
+| **Fat** | 95g | 28% |
+
+*Note: Higher protein for muscle building; distributed across meals for optimal absorption*
+
+---
+
+## 3. MEAL TIMING PLAN
+
+```
+7:00 AM  → Pre-workout breakfast
+9:30 AM  → Post-strength training snack
+12:30 PM → Lunch
+3:30 PM  → Pre-endurance training snack
+7:00 PM  → Post-workout dinner
+9:00 PM  → Evening recovery snack
+```
+
+---
+
+## 4 & 5. COMPLETE MEAL PLAN WITH PORTIONS
+
+### **7:00 AM | Pre-Workout Breakfast** (550 cal | 18g protein | 85g carbs | 12g fat)
+- Oatmeal (60g dry)
+- Soy milk (250ml, fortified with B12)
+- Banana (150g)
+- Ground flaxseed (15g)
+- Maple syrup (1 tbsp)
+- Almond butter (20g)
+
+*Why: Complex carbs + plant protein for sustained morning energy*
+
+---
+
+### **9:30 AM | Post-Strength Training Snack** (380 cal | 22g protein | 60g carbs | 8g fat)
+- Pea protein smoothie:
+  - Pea protein powder (30g)
+  - Soy milk (300ml)
+  - Berries (100g frozen)
+  - Date paste (20g)
+- Whole grain toast (40g)
+- Tahini spread (10g)
+
+*Why: Fast-absorbing protein + quick carbs for muscle recovery*
+
+---
+
+### **12:30 PM | Lunch** (800 cal | 32g protein | 110g carbs | 20g fat)
+- **Lentil & quinoa Buddha bowl**
+- Cooked quinoa (100g)
+- Red lentils (120g cooked)
+- Roasted chickpeas (80g)
+- Kale (100g)
+- Roasted sweet potato (150g)
+- Avocado (80g)
+- Tahini dressing (30g mixed with lemon juice & garlic)
+- Side: Apple (150g)
+
+*Why: Complete amino acid profile + iron-rich vegetables for endurance*
+
+---
+
+### **3:30 PM | Pre-Endurance Training Snack** (420 cal | 16g protein | 75g carbs | 10g fat)
+- **Energy balls** (homemade, 3 balls):
+  - Dates (80g), oats (40g), peanut butter (30g), hemp seeds (10g)
+- OR: 
+  - Hummus (80g) with whole grain crackers (50g)
+  - Dried figs (60g)
+  - Water with electrolytes
+
+*Why: Sustained energy + plant protein for 60+ minute endurance session*
+
+---
+
+### **7:00 PM | Post-Workout Dinner** (850 cal | 38g protein | 105g carbs | 28g fat)
+- **Tempeh stir-fry**
+- Marinated tempeh (180g, pan-fried)
+- Brown rice (120g cooked)
+- Mixed vegetables (broccoli 100g, bell peppers 80g, snap peas 80g)
+- Coconut oil (2 tbsp)
+- Low-sodium soy sauce</pre></td>
+                <td class="score-col"><span class="score score-medium">7</span></td>
+                <td class="reasoning">The solution successfully meets all three mandatory requirements: daily caloric total is clearly stated (3,200-3,400 calories), macronutrient breakdown is provided in table format, and meals include exact foods, portions, and timing. The nutritional content is well-designed for a vegan athlete with muscle-building goals, featuring complete proteins and iron-rich foods. However, the solution violates the 'compact and concise' criterion from the original task description through excessive detail and formatting. Additionally, the 9:00 PM recovery snack is mentioned in the timing plan but never actually detailed in the meal section. These issues prevent a perfect score, though the core requirements are met.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with an athlete with multiple dietary restrictions (gluten-free, dairy-free, nut-free) to verify accommodation of allergies</td>
+                <td class="prompt-inputs"><strong>height:</strong> 178<br><strong>weight:</strong> 75<br><strong>goal:</strong> muscle gain<br><strong>restrictions:</strong> gluten-free, dairy-free, nut-free</td>
+                <td class="criteria">• Meal plan contains exactly 3 meals covering breakfast, lunch, and dinner<br>• All foods comply with gluten-free, dairy-free, and nut-free restrictions<br>• Meals support muscle gain goal with adequate protein content</td>
+                <td class="output"><pre># One-Day Meal Plan for Muscle-Gaining Athlete
+
+## 1. DAILY CALORIE CALCULATION
+
+**Basal Metabolic Rate (BMR):**
+- Using Mifflin-St Jeor: ~1,720 calories
+- Activity Factor (strength training for muscle gain): 1.6
+- **Total Daily Energy Expenditure: ~2,750 calories**
+
+For muscle gain with progressive overload: **3,200-3,400 calories**
+
+---
+
+## 2. MACRONUTRIENT BREAKDOWN
+
+| Macronutrient | Amount | Percentage |
+|---|---|---|
+| **Protein** | 160g | 20% |
+| **Carbohydrates** | 420g | 53% |
+| **Fat** | 95g | 27% |
+
+---
+
+## 3. MEAL TIMING PLAN
+
+```
+7:00 AM  → Breakfast (post-overnight fast)
+10:00 AM → Mid-morning snack
+1:00 PM  → Lunch
+3:30 PM  → Pre-workout snack
+6:00 PM  → Post-workout dinner
+8:30 PM  → Evening recovery snack
+```
+
+---
+
+## 4 & 5. COMPLETE MEAL PLAN WITH PORTIONS
+
+### **7:00 AM | Breakfast** (650 cal | 32g protein | 75g carbs | 18g fat)
+- **Gluten-free oats** (70g dry)
+- Egg whites (3 large eggs, scrambled separately)
+- Whole egg (1 large)
+- Honey (1 tbsp, 20g)
+- Olive oil for cooking (1 tsp, 5g)
+- Banana (120g)
+- Orange juice (200ml)
+
+*Why: High protein to break overnight fast + fast carbs for morning energy*
+
+---
+
+### **10:00 AM | Mid-Morning Snack** (380 cal | 28g protein | 48g carbs | 6g fat)
+- **Rice cakes** (50g)
+- Canned tuna in water (120g, drained)
+- Sweet potato (150g, baked)
+- Sea salt & pepper to taste
+- Apple (150g)
+
+*Why: Lean protein + simple carbs for sustained energy*
+
+---
+
+### **1:00 PM | Lunch** (750 cal | 42g protein | 85g carbs | 20g fat)
+- **Grilled chicken breast** (200g)
+- White rice (150g cooked)
+- Broccoli (150g, steamed)
+- Carrots (80g, steamed)
+- Olive oil drizzle (1 tbsp, 15g)
+- Salt & herbs for seasoning
+- Gluten-free bread (50g)
+- Mango (120g)
+
+*Why: Complete protein + carbs for muscle building + micronutrients*
+
+---
+
+### **3:30 PM | Pre-Workout Snack** (420 cal | 25g protein | 62g carbs | 5g fat)
+- **Ground turkey patties** (150g, baked or grilled)
+- White potato (250g, microwaved)
+- Honey (½ tbsp, 10g)
+- Rice cakes (30g)
+- Coconut water (200ml)
+
+*Why: Fast-digesting protein + carbs for workout fuel & muscle pump*
+
+---
+
+### **6:00 PM | Post-Workout Dinner** (780 cal | 50g protein | 90g carbs | 22g fat)
+- **Lean ground beef** (220g, 93/7 lean)
+- Brown rice (160g cooked)
+- Bell peppers (120g, sautéed)
+- Zucchini (100g, sautéed)
+- Coconut oil for cooking (1 tbsp, 15g)
+- Low-sodium beef broth for flavor
+- Pineapple (120g)
+- Herbal tea (unsweetened)
+
+*Why: High-quality protein + carbs for muscle recovery post-workout*
+
+---
+
+### **8:30 PM | Evening Recovery</pre></td>
+                <td class="score-col"><span class="score score-low">3</span></td>
+                <td class="reasoning">The solution violates a mandatory requirement by providing 6 eating occasions (breakfast, mid-morning snack, lunch, pre-workout snack, post-workout dinner, evening snack) when the criteria explicitly requires 'exactly 3 meals covering breakfast, lunch, and dinner.' Additionally, the solution is incomplete with the final meal cut off. While the content that exists meets the restriction requirements and includes proper caloric/macro information, the structural violation of the meal count requirement is a critical failure of the stated criteria.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with an early morning athlete (5am training) requiring a pre-dawn meal plan with quick energy sources</td>
+                <td class="prompt-inputs"><strong>height:</strong> 178<br><strong>weight:</strong> 75<br><strong>goal:</strong> Maximize energy and performance for 5am high-intensity training session<br><strong>restrictions:</strong> Vegetarian, no dairy</td>
+                <td class="criteria">• Includes a pre-dawn meal (consumed before 5am) with quick-digesting carbohydrates and protein<br>• Meal plan covers full 24-hour period with appropriate post-workout nutrition<br>• All meals respect vegetarian and dairy-free restrictions<br>• Plan is compact and concise (presented in brief format, not lengthy)</td>
+                <td class="output"><pre># One-Day Meal Plan for Vegetarian Athlete
+
+## 1. DAILY CALORIE CALCULATION
+
+**Basal Metabolic Rate (BMR):**
+- Using Mifflin-St Jeor: ~1,710 calories
+- Activity Factor (high-intensity athletic training): 1.75
+- **Total Daily Energy Expenditure: ~2,993 calories**
+
+For optimal performance with intense 5am training: **3,100-3,300 calories**
+
+---
+
+## 2. MACRONUTRIENT BREAKDOWN
+
+| Macronutrient | Amount | Percentage |
+|---|---|---|
+| **Protein** | 148g | 19% |
+| **Carbohydrates** | 435g | 56% |
+| **Fat** | 93g | 27% |
+
+---
+
+## 3. MEAL TIMING PLAN
+
+```
+4:15 AM  → Pre-workout fuel (before 5 AM training)
+7:00 AM  → Post-workout breakfast
+11:00 AM → Mid-morning snack
+1:30 PM  → Lunch
+4:00 PM  → Afternoon snack
+7:00 PM  → Dinner
+9:00 PM  → Optional recovery snack
+```
+
+---
+
+## 4 & 5. COMPLETE MEAL PLAN WITH PORTIONS
+
+### **4:15 AM | Pre-Workout Fuel** (280 cal | 6g protein | 60g carbs | 2g fat)
+- Banana (180g)
+- Dates (40g, 3-4 pieces)
+- Water
+
+*Why: Quick-digesting carbs for immediate energy; minimal stomach burden*
+
+---
+
+### **7:00 AM | Post-Workout Breakfast** (700 cal | 32g protein | 95g carbs | 18g fat)
+- **Tofu scramble with toast**
+- Firm tofu (200g, crumbled)
+- Turmeric (½ tsp), nutritional yeast (2 tbsp)
+- Spinach (80g), tomatoes (60g)
+- Olive oil (1 tbsp)
+- Whole grain toast (60g)
+- Almond butter alternative (20g)
+- Fresh orange juice (250ml)
+
+*Why: Complete protein + carbs + vitamins for muscle recovery*
+
+---
+
+### **11:00 AM | Mid-Morning Snack** (320 cal | 14g protein | 52g carbs | 6g fat)
+- Lentil energy balls (3 balls, homemade: lentils + oats + coconut oil) OR
+- Hummus (80g) with whole grain crackers (50g)
+- Apple (150g)
+- Plant-based milk (200ml)
+
+*Why: Sustained energy between breakfast and lunch*
+
+---
+
+### **1:30 PM | Lunch** (800 cal | 35g protein | 110g carbs | 22g fat)
+- **Chickpea & quinoa Buddha bowl**
+- Cooked quinoa (120g)
+- Roasted chickpeas (150g)
+- Roasted sweet potato (150g)
+- Kale (100g)
+- Avocado (80g)
+- Tahini dressing (2 tbsp mixed with lemon)
+- Whole grain roll (45g)
+- Side: mixed berries (100g)
+
+*Why: Complete amino acid profile + micronutrients for afternoon energy*
+
+---
+
+### **4:00 PM | Afternoon Snack** (380 cal | 16g protein | 58g carbs | 8g fat)
+- Peanut butter energy balls (2 balls: peanut butter, oats, dates)
+- Granola bar (dairy-free, 50g)
+- Banana (120g)
+- Water or herbal tea
+
+*Why: Balanced snack for sustained energy through evening*
+
+---
+
+### **7:00 PM | Dinner** (680 cal | 40g protein | 85g carbs | 23g fat)
+- **Lentil & vegetable curry**
+- Red lentils (100g dry/280g cooked)
+-</pre></td>
+                <td class="score-col"><span class="score score-low">5</span></td>
+                <td class="reasoning">The solution meets all three mandatory requirements: it provides daily caloric total (3,100-3,300), complete macronutrient breakdown, and meals with exact foods, portions, and timing. It successfully addresses the pre-dawn meal criterion with the 4:15 AM banana/dates meal and includes appropriate post-workout nutrition. All dietary restrictions are respected. However, the solution is incomplete due to the abrupt cutoff in the dinner section, which is a significant flaw. Additionally, while the content is thorough, it violates the 'compact and concise' secondary criterion by being unnecessarily verbose with explanatory text. The incomplete dinner section prevents a higher score despite otherwise strong content.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with an athlete recovering from injury, requiring anti-inflammatory foods and modified portions for reduced activity</td>
+                <td class="prompt-inputs"><strong>height:</strong> 178 cm<br><strong>weight:</strong> 82 kg<br><strong>goal:</strong> Recovery from ACL injury with anti-inflammatory nutrition and reduced caloric intake due to limited training<br><strong>restrictions:</strong> No gluten, no dairy</td>
+                <td class="criteria">• Meal plan includes anti-inflammatory foods (omega-3 rich, turmeric, berries, leafy greens)<br>• Portions are reduced appropriately for decreased activity level while maintaining adequate protein for recovery<br>• All meals comply with gluten-free and dairy-free restrictions<br>• Plan is compact and covers breakfast, lunch, dinner, and one snack for a single day</td>
+                <td class="output"><pre># One-Day Meal Plan for ACL Recovery Athlete
+
+## 1. DAILY CALORIE CALCULATION
+
+**Basal Metabolic Rate (BMR):**
+- Using Mifflin-St Jeor: ~1,750 calories
+- Activity Factor (reduced training due to injury): 1.4
+- **Total Daily Energy Expenditure: ~2,450 calories**
+
+For ACL recovery with anti-inflammatory nutrition and reduced activity: **2,200-2,400 calories**
+
+---
+
+## 2. MACRONUTRIENT BREAKDOWN
+
+| Macronutrient | Amount | Percentage |
+|---|---|---|
+| **Protein** | 130g | 22% |
+| **Carbohydrates** | 275g | 50% |
+| **Fat** | 75g | 31% |
+
+*Higher protein supports muscle preservation; moderate carbs for reduced training; healthy fats for anti-inflammatory support*
+
+---
+
+## 3. MEAL TIMING PLAN
+
+```
+7:00 AM  → Breakfast (anti-inflammatory focus)
+10:00 AM → Mid-morning snack
+1:00 PM  → Lunch (post-rehab session)
+4:00 PM  → Pre-dinner snack
+7:00 PM  → Dinner (recovery focus)
+```
+
+---
+
+## 4 & 5. COMPLETE MEAL PLAN WITH PORTIONS
+
+### **7:00 AM | Breakfast** (520 cal | 28g protein | 65g carbs | 15g fat)
+- **Gluten-free oats with berries**
+- Gluten-free rolled oats (50g dry)
+- Almond milk (240ml, unsweetened)
+- Mixed berries (120g: blueberries, raspberries)
+- Ground flaxseed (15g)
+- Honey (1 tbsp)
+- Turmeric (½ tsp) *anti-inflammatory*
+
+*Why: Gluten-free grains + antioxidant berries for inflammation management*
+
+---
+
+### **10:00 AM | Mid-Morning Snack** (280 cal | 18g protein | 35g carbs | 8g fat)
+- **Coconut-based protein smoothie**
+- Coconut milk (200ml, full-fat)
+- Plant-based protein powder (25g, dairy-free)
+- Banana (120g)
+- Ginger (1 tsp, fresh grated) *anti-inflammatory*
+- Chia seeds (10g)
+
+*Why: Anti-inflammatory fats + muscle-supporting protein*
+
+---
+
+### **1:00 PM | Lunch** (630 cal | 32g protein | 70g carbs | 20g fat)
+- **Salmon with sweet potato & greens**
+- Wild-caught salmon (150g, grilled)
+- Sweet potato (180g, roasted)
+- Mixed leafy greens (100g: spinach, kale)
+- Olive oil (1.5 tbsp) for cooking
+- Lemon juice & herbs for seasoning
+- Side of roasted carrots (80g)
+
+*Why: Omega-3s reduce inflammation; lean protein supports recovery*
+
+---
+
+### **4:00 PM | Pre-Dinner Snack** (250 cal | 20g protein | 30g carbs | 6g fat)
+- **Rice cakes with avocado & turkey**
+- Rice cakes (2 cakes, 25g)
+- Avocado (60g, ¼ medium)
+- Deli turkey breast (80g, nitrate-free)
+- Sea salt & black pepper
+
+*Why: Quick carbs + protein for sustained energy; avocado provides anti-inflammatory fats*
+
+---
+
+### **7:00 PM | Dinner** (650 cal | 36g protein | 75g carbs | 26g fat)
+- **Chicken with quinoa & roasted vegetables**
+- Grilled chicken breast (180g)
+- Quinoa (80g cooked)
+- Roasted vegetables (200g): broccoli, bell peppers, zucchini, Brussels sprouts
+- Extra virgin olive oil (2 tbsp for roasting)</pre></td>
+                <td class="score-col"><span class="score score-high">9</span></td>
+                <td class="reasoning">The solution comprehensively addresses all mandatory requirements with precise portions, timing, and caloric/macronutrient data. The meal plan demonstrates strong understanding of anti-inflammatory nutrition for ACL recovery with excellent food choices (salmon, turmeric, ginger, berries, leafy greens). All dietary restrictions are meticulously observed. The plan is appropriately compact and well-organized. Minor weaknesses include the caloric range presentation and lack of cumulative daily totals for verification, but these do not violate mandatory requirements. The solution exceeds the 'one snack' specification by including two snacks, which is actually beneficial but slightly deviates from the 'compact' instruction.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a young teenage athlete (15 years old) with different caloric and nutritional development needs than adult athletes</td>
+                <td class="prompt-inputs"><strong>height:</strong> 178 cm<br><strong>weight:</strong> 68 kg<br><strong>goal:</strong> Build muscle and improve athletic performance for competitive soccer<br><strong>restrictions:</strong> Vegetarian, no nuts</td>
+                <td class="criteria">• Meal plan spans exactly 1 day with breakfast, lunch, dinner, and snacks<br>• Provides adequate protein intake (1.6-2.0g per kg body weight) suitable for teenage muscle development<br>• All meals and snacks are vegetarian and nut-free<br>• Includes caloric intake appropriate for a 15-year-old athlete (approximately 2,800-3,200 calories)</td>
+                <td class="output"><pre># One-Day Meal Plan for Vegetarian Soccer Athlete
+
+## 1. DAILY CALORIE CALCULATION
+
+**Basal Metabolic Rate (BMR):**
+- Using Mifflin-St Jeor: ~1,620 calories
+- Activity Factor (competitive soccer training): 1.8
+- **Total Daily Energy Expenditure: ~2,916 calories**
+
+For muscle building with strength training: **3,100-3,300 calories**
+
+---
+
+## 2. MACRONUTRIENT BREAKDOWN
+
+| Macronutrient | Amount | Percentage |
+|---|---|---|
+| **Protein** | 140g | 18% |
+| **Carbohydrates** | 465g | 56% |
+| **Fat** | 93g | 27% |
+
+---
+
+## 3. MEAL TIMING PLAN
+
+```
+7:00 AM  → Pre-training breakfast
+10:00 AM → Post-training snack
+1:00 PM  → Lunch
+3:30 PM  → Pre-afternoon session snack
+7:00 PM  → Dinner
+9:00 PM  → Optional recovery snack
+```
+
+---
+
+## 4 & 5. COMPLETE MEAL PLAN WITH PORTIONS
+
+### **7:00 AM | Pre-Training Breakfast** (600 cal | 22g protein | 95g carbs | 14g fat)
+- Oatmeal (60g dry)
+- Whole milk (300ml)
+- Banana (120g)
+- Honey (1.5 tbsp)
+- Flax seeds (15g)
+- Strawberries (80g)
+
+*Why: Complex carbs + protein for sustained energy during morning soccer training*
+
+---
+
+### **10:00 AM | Post-Training Snack** (380 cal | 28g protein | 48g carbs | 8g fat)
+- Greek yogurt (250g, 0% fat)
+- Granola (50g, nut-free)
+- Dates (50g, chopped)
+- Blueberries (100g)
+
+*Why: Fast-absorbing carbs + protein for muscle recovery within 30 minutes of training*
+
+---
+
+### **1:00 PM | Lunch** (800 cal | 35g protein | 110g carbs | 20g fat)
+- **Lentil & vegetable bowl**
+- Red lentils (120g cooked)
+- Quinoa (80g cooked)
+- Roasted sweet potato (150g)
+- Broccoli (100g)
+- Bell peppers (80g)
+- Olive oil (1.5 tbsp)
+- Lemon-tahini dressing (2 tbsp tahini)
+- Whole grain bread (50g)
+
+*Why: Complete protein + iron-rich legumes + sustained carbs for afternoon performance*
+
+---
+
+### **3:30 PM | Pre-Afternoon Session Snack** (340 cal | 16g protein | 54g carbs | 7g fat)
+- Hummus (80g)
+- Pita bread (60g)
+- Carrot sticks (100g)
+- Cucumber (80g)
+- White grapes (120g)
+
+*Why: Light, easily digestible carbs + protein 1.5 hours before evening training*
+
+---
+
+### **7:00 PM | Dinner** (750 cal | 38g protein | 85g carbs | 28g fat)
+- **Paneer & spinach curry**
+- Paneer cheese (180g)
+- Spinach (150g)
+- Chickpeas (100g cooked)
+- Onions (80g)
+- Tomato sauce (120g)
+- Coconut milk, light (100ml)
+- Brown rice (110g cooked)
+- Olive oil (1.5 tbsp)
+- Naan bread (50g)
+
+*Why: Complete amino acids from paneer + calcium for bone health + iron from spinach*
+
+---
+
+### **9:00 PM | Recovery Snack** (330 cal | 25g protein | 35g carbs | 6g fat)
+- Cottage cheese (220</pre></td>
+                <td class="score-col"><span class="score score-medium">6</span></td>
+                <td class="reasoning">The solution demonstrates strong structure and methodology, meeting the core mandatory requirements of including daily caloric total, macronutrient breakdown, and meals with portions and timing. All meals are vegetarian and nut-free. However, the critical flaw is the incomplete final entry that truncates the recovery snack, preventing verification of the actual daily totals. The stated protein amount (140g) technically meets the 1.6-2.0g/kg range for a 68kg athlete, but the incomplete data undermines confidence in the final calculations. The solution is well-organized and nutritionally sound in approach, but the truncation is a significant deficiency that prevents full validation of mandatory requirements.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with a sport with multiple training sessions per day (swimming) requiring strategic snacking and recovery nutrition between sessions</td>
+                <td class="prompt-inputs"><strong>height:</strong> 178 cm<br><strong>weight:</strong> 72 kg<br><strong>goal:</strong> Optimize performance and recovery for double training sessions (morning and evening swim workouts)<br><strong>restrictions:</strong> Vegetarian, no nuts</td>
+                <td class="criteria">• Includes 3+ meals and 2+ strategic snacks timed between/around two training sessions<br>• Provides adequate protein and carbohydrates for endurance swimming and recovery<br>• Respects vegetarian and nut-free dietary restrictions<br>• Realistic and compact format suitable for a single day</td>
+                <td class="output"><pre># One-Day Meal Plan for Vegetarian Swimmer
+
+## 1. DAILY CALORIE CALCULATION
+
+**Basal Metabolic Rate (BMR):**
+- Using Mifflin-St Jeor equation: ~1,680 calories
+- Activity Factor (double swim training sessions): 1.8
+- **Total Daily Energy Expenditure: ~3,020 calories**
+
+For optimal recovery with intense double sessions: **3,200-3,400 calories**
+
+---
+
+## 2. MACRONUTRIENT BREAKDOWN
+
+| Macronutrient | Amount | Percentage |
+|---|---|---|
+| **Protein** | 150g | 18% |
+| **Carbohydrates** | 480g | 57% |
+| **Fat** | 95g | 25% |
+
+---
+
+## 3. MEAL TIMING PLAN
+
+```
+5:45 AM  → Pre-morning swim snack
+8:00 AM  → Post-morning swim breakfast
+12:00 PM → Lunch
+3:30 PM  → Pre-evening training snack
+7:00 PM  → Dinner
+8:45 PM  → Evening recovery snack
+```
+
+---
+
+## 4 & 5. COMPLETE MEAL PLAN WITH PORTIONS
+
+### **5:45 AM | Pre-Morning Swim Snack** (350 cal | 6g protein | 82g carbs | 2g fat)
+- Banana (180g)
+- Honey (2 tbsp)
+- White toast (40g)
+- Water
+
+*Why: Fast-digesting carbs 15 minutes before swim; prevents GI distress*
+
+---
+
+### **8:00 AM | Post-Morning Swim Breakfast** (700 cal | 32g protein | 95g carbs | 18g fat)
+- **Vegetarian breakfast bowl**
+- Scrambled eggs (2 large eggs, 100g)
+- Whole grain toast (50g)
+- Butter (10g)
+- Greek yogurt (150g, 0% fat)
+- Mixed berries (100g: blueberries, strawberries)
+- Granola, nut-free (50g)
+- Orange juice (250ml)
+
+*Why: Fast-absorbing protein + carbs for muscle repair within 30 minutes post-swim*
+
+---
+
+### **12:00 PM | Lunch** (850 cal | 36g protein | 110g carbs | 22g fat)
+- **Lentil & vegetable curry**
+- Red lentils (120g cooked)
+- Chickpeas (100g cooked)
+- Coconut milk (150ml, light)
+- Onions, tomatoes, spinach (200g total)
+- Jasmine rice (120g cooked)
+- Naan bread (60g)
+- Olive oil (1.5 tbsp for cooking)
+- Side of sliced cucumber (100g)
+- Mango (120g)
+
+*Why: Sustained energy + complete plant proteins for afternoon session preparation*
+
+---
+
+### **3:30 PM | Pre-Evening Training Snack** (400 cal | 16g protein | 75g carbs | 8g fat)
+- Hummus (80g)
+- Whole wheat pita bread (2 pieces, 120g total)
+- Carrot sticks (80g)
+- Dried apricots (50g)
+- Seeds (sunflower, 30g)
+
+*Why: Balanced carbs + protein 2.5 hours before evening swim for sustained energy*
+
+---
+
+### **7:00 PM | Dinner** (700 cal | 40g protein | 80g carbs | 28g fat)
+- **Tofu & vegetable stir-fry**
+- Firm tofu (250g, pressed and cubed)
+- Mixed vegetables (broccoli 120g, bell peppers 100g, snap peas 80g)
+- Garlic & ginger (fresh, 15g total)
+- Brown rice (130g cooked)
+- Sesame oil (2 tbsp)
+- Low-sodium soy sauce
+- Edamame (80g)
+- Herbal</pre></td>
+                <td class="score-col"><span class="score score-low">4</span></td>
+                <td class="reasoning">The solution demonstrates strong planning and meets most mandatory requirements: it includes daily caloric total (3,200-3,400 cal), detailed macronutrient breakdown (150g protein, 480g carbs, 95g fat), and 5 complete meals with exact portions and timing around double training sessions. It successfully respects all dietary restrictions and provides strategic snack timing. However, the solution critically fails to be complete - it cuts off mid-sentence during the dinner description and never provides the promised evening recovery snack. This incompleteness prevents full verification of the macronutrient breakdown and makes the meal plan unusable as written. While the framework and approach are excellent, the execution is fundamentally flawed due to truncation.</td>
+            </tr>
+        
+            <tr>
+                <td>Testing with minimal dietary preferences specified, ensuring the prompt generates a balanced, practical default meal plan without additional constraints</td>
+                <td class="prompt-inputs"><strong>height:</strong> 178<br><strong>weight:</strong> 75<br><strong>goal:</strong> muscle gain<br><strong>restrictions:</strong> none</td>
+                <td class="criteria">• Meal plan covers exactly one full day with breakfast, lunch, dinner, and snacks<br>• Provides balanced macronutrients appropriate for muscle gain (higher protein emphasis)<br>• All meals and portions are practical and realistic for a single athlete to prepare<br>• Includes estimated caloric content or portion guidance for each meal</td>
+                <td class="output"><pre># One-Day Meal Plan for Muscle-Gaining Athlete
+
+## 1. DAILY CALORIE CALCULATION
+
+**Basal Metabolic Rate (BMR):**
+- Using Mifflin-St Jeor: ~1,700 calories
+- Activity Factor (strength training for muscle gain): 1.75
+- **Total Daily Energy Expenditure: ~2,975 calories**
+
+For optimal muscle gain with progressive overload: **3,300-3,500 calories**
+
+---
+
+## 2. MACRONUTRIENT BREAKDOWN
+
+| Macronutrient | Amount | Percentage |
+|---|---|---|
+| **Protein** | 165g | 20% |
+| **Carbohydrates** | 440g | 53% |
+| **Fat** | 110g | 27% |
+
+*Protein prioritized at 2.2g per kg bodyweight for muscle hypertrophy*
+
+---
+
+## 3. MEAL TIMING PLAN
+
+```
+7:00 AM  → Pre-workout breakfast
+9:30 AM  → Post-workout meal (within 90 minutes)
+12:30 PM → Lunch
+3:30 PM  → Mid-afternoon snack
+6:30 PM  → Dinner
+8:30 PM  → Evening recovery snack
+```
+
+---
+
+## 4 & 5. COMPLETE MEAL PLAN WITH PORTIONS
+
+### **7:00 AM | Pre-Workout Breakfast** (650 cal | 25g protein | 95g carbs | 14g fat)
+- Oatmeal (80g dry)
+- Whole milk (300ml)
+- Banana (150g)
+- Peanut butter (1.5 tbsp / 25g)
+- Honey (1 tbsp)
+
+*Why: Sustained energy + quick carbs for strength training*
+
+---
+
+### **9:30 AM | Post-Workout Meal** (750 cal | 42g protein | 85g carbs | 18g fat)
+- **Grilled chicken breast** (200g)
+- White rice (150g cooked)
+- Broccoli (120g)
+- Olive oil (1 tbsp)
+- Orange juice (250ml)
+- Greek yogurt (150g, 2%)
+
+*Why: Fast-absorbing carbs + high protein for muscle repair*
+
+---
+
+### **12:30 PM | Lunch** (800 cal | 38g protein | 95g carbs | 22g fat)
+- **Lean beef burger**
+- Ground beef patty (180g, 93/7 lean)
+- Whole wheat bun (50g)
+- Sweet potato (200g, roasted)
+- Mixed green salad (150g)
+- Olive oil & balsamic dressing (1.5 tbsp)
+- Apple (150g)
+
+*Why: Iron-rich protein + complex carbs for sustained energy*
+
+---
+
+### **3:30 PM | Mid-Afternoon Snack** (400 cal | 28g protein | 55g carbs | 12g fat)
+- Protein shake:
+  - Whey protein powder (40g)
+  - Whole milk (250ml)
+  - Banana (120g)
+  - Almond butter (1 tbsp / 16g)
+- Granola bar (40g)
+
+*Why: Convenient protein + carbs between meals*
+
+---
+
+### **6:30 PM | Dinner** (750 cal | 44g protein | 75g carbs | 24g fat)
+- **Baked salmon** (220g)
+- Brown rice (140g cooked)
+- Asparagus (120g, roasted with olive oil)
+- Sweet potato (150g)
+- Avocado (80g)
+- Lemon juice
+
+*Why: Omega-3 fatty acids + complete amino acids + micronutrients*
+
+---
+
+### **8:30 PM | Evening Recovery Snack** (350 cal | 32g protein | 35g carbs | 8g fat)
+- Cottage cheese (250g, 2%)
+- Berries (100g: blueberries/strawberries)
+- Gran</pre></td>
+                <td class="score-col"><span class="score score-medium">6</span></td>
+                <td class="reasoning">The solution meets all three mandatory requirements in principle: it provides a daily caloric target, detailed macronutrient breakdown, and meals with portions and timing. However, the solution is technically incomplete due to the truncated final meal entry, which prevents full verification of the daily totals. The first five meals total approximately 3,350 calories and 169g protein, which aligns well with the stated targets and muscle-gain goals. The incomplete final meal is a significant flaw that undermines the solution's usability, though the structure and quality of the completed portions are excellent. The meal plan is well-reasoned, practical, and appropriately tailored to the athlete's profile.</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </body>
+    </html>
+    
